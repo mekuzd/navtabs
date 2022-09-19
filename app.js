@@ -25,20 +25,18 @@ btns.forEach((btn) => {
   btn.addEventListener('click', function (e) {
     // got the buttons on html and removed classlist from which has the class list
     // btn here is the clicked btn while btns is the unclicked button
-
+    btn.classList.add("active");
     btns.forEach((btns) => {
       if (btn !== btns) {
         btns.classList.remove("active");
       }
     })
     // at this point i added the active classlist to the clicked button
-    btn.classList.add("active");
     const id = e.target.dataset.id;
     const element = document.getElementById(id);
 
     // this point i added the classlist to the content div
     element.classList.add("active");
-
     //at this point element is the div thta us currntly clicked while articles is not being clicked
     // i then removed active class from the article
     articles.forEach(function (article) {
